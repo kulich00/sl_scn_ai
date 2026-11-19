@@ -10,7 +10,7 @@ class Executor:
             desired_closed = True
         elif kind == "open_door":
             desired_closed = False
-        else: return ValueError(f"wrong door status{kind}")
+        else: raise ValueError(f"wrong door status{kind}")
         
         if self.control_state.need_door_toggle(target, desired_closed) == True:
             return self.keyboard[target]
