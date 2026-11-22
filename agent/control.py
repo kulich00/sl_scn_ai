@@ -24,6 +24,13 @@ class ControlState:
 
         return left_text +'|'+ vent_text +'|'+ right_text
     
+    def camera_status_text(self):
+        if self.tablet_open == True:
+            camera_text = "Планшет: Открыт"
+        else:
+            camera_text = "Планшет: Открыт"
+        return camera_text
+    
     def need_door_toggle(self, door_side, desired_closed):
         current_close = {'left':self.left_closed,'vent':self.vent_closed,'right':self.right_closed}
         if door_side in current_close:
